@@ -1,37 +1,47 @@
 package testPackage;
 
-import org.openqa.selenium.By;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class LoginTest {
 	
-	//public WebDriver driver; 
-	
-	@BeforeSuite
-	public void setUp(){
-		
-		System.out.println("this is before suite");
-//		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+//	public static WebDriver driver; 
+//	
+//	@BeforeSuite
+//	public void setUp(){
+//		
 //		driver = new FirefoxDriver();
-	}
+//	}
+	
+//	public static void main(String[] args) {
+//		
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sgawas\\Desktop\\chromedriver.exe");
+//		WebDriver driver= new ChromeDriver();
+//		driver.get("https://www.google.com/intl/en/mail/help/about.html");
+//		driver.close();
+//
+//	}
+
 
 	@Test
 	public void doLogin(){
-		System.out.println("this is test method");
-//		driver.get("https://gmail.com");
-//		driver.findElement(By.xpath("//*[@id='gmail-sign-in']")).click();
-//		driver.findElement(By.xpath("//*[@id='Email']")).sendKeys("suraj@gmail.com");
-//		driver.findElement(By.xpath("//*[@id='next']")).click();
+		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\sgawas\\Desktop\\chromedriver.exe");
+		WebDriver driver = new FirefoxDriver();
+		driver.get("https://gmail.com");
+		//driver.findElement(By.xpath("//*[@id='gmail-sign-in']")).click();
+		driver.findElement(By.xpath("//*[@id='Email']")).sendKeys("suraj@gmail.com");
+		driver.findElement(By.xpath("//*[@id='next']")).click();
+		driver.close();
+		driver.quit();
 	}
 	
-	@AfterSuite
-	public void tearDown(){
-		System.out.println("this is after suite method");
+//	@AfterSuite
+//	public void tearDown(){
 //		driver.close();
 //		driver.quit();
-	}
+//	}
 }
