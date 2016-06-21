@@ -4,18 +4,19 @@ package testPackage;
 import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class LoginTest {
 	
 //	public static WebDriver driver; 
 //	
-//	@BeforeSuite
-//	public void setUp(){
-//		
-//		driver = new FirefoxDriver();
-//	}
+	@BeforeSuite
+	public void setUp(){
+		
+		System.out.println("this is before suite method");
+	}
 	
 //	public static void main(String[] args) {
 //		
@@ -29,8 +30,8 @@ public class LoginTest {
 
 	@Test
 	public void doLogin(){
-		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\sgawas\\Desktop\\chromedriver.exe");
-		WebDriver driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\sgawas\\Desktop\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
 		driver.get("https://gmail.com");
 		//driver.findElement(By.xpath("//*[@id='gmail-sign-in']")).click();
 		driver.findElement(By.xpath("//*[@id='Email']")).sendKeys("suraj@gmail.com");
